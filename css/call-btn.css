@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+@media screen /*and (min-width : 1024px)*/ and (max-width: 1440px) {
+  #call-btn { left: 65px !important; }
+}
+
+#call-btn {
+  bottom: 50px;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  opacity: 0.5;
+  position: fixed;
+  left: 115px;
+  z-index: 99;
+}
+#call-btn div {
+  animation: 1.5s ease-out 0s normal none infinite running call-mini;
+  background-clip: padding-box;
+  background-color: #f07c23;
+  border-radius: 50% !important;
+  height: 70px;
+  width: 70px;
+}
+#call-btn div::before {
+  animation: 1.5s linear 0s normal none infinite running call-phone;
+  background-image: url('/img/call-btn.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#call-btn:hover {
+  opacity: 0.8;
+}
+#call-btn:hover div {
+  animation: 1s ease-out 0.4s normal none infinite running call-mini2;
+}
+#call-btn:hover div::before {
+  animation: 1s linear 0s normal none infinite running call-phone2;
+}
+@keyframes call-phone {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes call-phone2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes call-mini {
+  0% {
+    box-shadow: 0 0 8px 6px rgba(217, 85, 80, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(217, 85, 80, 0);
+  }
+  10% {
+    box-shadow: 0 0 8px 6px rgba(0, 0, 0, 1), 0 0 12px 10px rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 8px 6px rgba(217, 85, 80, 0), 0 0 0 40px rgba(0, 0, 0, 0), 0 0 0 40px rgba(217, 85, 80, 0);
+  }
+}
+@keyframes call-mini2 {
+  0% {
+    box-shadow: 0 0 8px 6px rgba(217, 85, 80, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(217, 85, 80, 0);
+  }
+  10% {
+    box-shadow: 0 0 8px 6px rgba(0, 0, 0, 1), 0 0 12px 10px rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 8px 6px rgba(217, 85, 80, 0), 0 0 0 40px rgba(0, 0, 0, 0), 0 0 0 40px rgba(217, 85, 80, 0);
+  }
+}

@@ -1,0 +1,59 @@
+Order Deny,Allow
+Deny from all
+Allow from 127.0.0.1
+Allow from 176.112.71.219 # Саша дом
+Allow from 176.112.64.233 # Кирилл дом
+Allow from 195.230.109.114 # Работа
+Allow from 2.95.206.51 # Директолог
+Allow from 217.17.124.158 # Родион
+
+<IfModule mod_charset.c>
+  CharsetDisable On
+</IfModule>
+AddDefaultCharset UTF-8
+php_value default_charset utf-8
+
+php_flag register_globals off
+php_flag display_errors off
+
+#ErrorDocument 403 /errors.php?code=403
+ErrorDocument 404 /errors.php?code=404
+
+Options -Indexes
+
+DirectoryIndex index.php
+
+Options +FollowSymlinks
+RewriteEngine on
+RewriteBase /
+RewriteRule ^.htaccess$ - [F]
+
+# --------------  Универсалки
+RewriteRule ^([^\/.&]+)$ $1/ [R=301,L]
+RewriteRule ^([^\/.]+)/([^&^\/.]+)$ $1/$2/ [R=301,L]
+RewriteRule ^([^\/.]+)/([^\/.]+)/([^&^\/.]+)$ $1/$2/$3/ [R=301,L]
+
+# -------------- Картинки
+RewriteRule ^(catalog)/([0-9]+)?.jpg$ uploads/$1/$2.jpg
+
+# -------------- Слайдер
+RewriteRule ^slider/(left|right)/([0-9-]+)x([0-9-]+)/([a-zA-Z0-9_-]+)?.jpg$ uploads/slider/$1/$2x$3/$4.jpg
+RewriteRule ^slider/(left|right)/([a-zA-Z0-9_-]+)?.jpg$ uploads/slider/$1/$2.jpg
+
+# -------------- Страницы
+RewriteRule ^([a-zA-Z0-9_-]+).htm$ pages.php?link=$1
+RewriteRule ^([a-zA-Z0-9_-]+).htm&(.*)$ pages.php?link=$1&$2
+
+# -------------- Каталог
+RewriteRule ^catalog/(.*)$ catalog.php?$1 [QSA]
+
+# -------------- Товары
+RewriteRule ^(goods|goods_arch|goods_promo)/([0-9-]+)x([0-9-]+)/([a-zA-Z0-9_-]+)?.jpg$ inc/im_nocache.php?fpath=/uploads/$1/&width=$2&height=$3&fname=$4.jpg
+RewriteRule ^(goods|goods_arch|goods_promo)/([a-zA-Z0-9_-]+)?.jpg$ inc/im_nocache.php?fpath=/uploads/$1/&fname=$2.jpg
+RewriteRule ^uploads/(goods|goods_arch|goods_promo)/([0-9-]+)x([0-9-]+)/([a-zA-Z0-9_-]+)?.jpg inc/im_nocache.php?fpath=/uploads/$1/&width=$2&height=$3&fname=$4.jpg
+RewriteRule ^uploads/(goods|goods_arch|goods_promo)/([a-zA-Z0-9_-]+)?.jpg$ inc/im_nocache.php?fpath=/uploads/$1/&fname=$2.jpg
+RewriteRule ^goods/([a-zA-Z0-9_\-]+).htm(.*)$ show_goods.php?link=$1$2
+
+# -------------- Модели товаров
+RewriteRule ^mods/([0-9-]+)x([0-9-]+)/([a-zA-Z0-9_-]+)?.jpg$ uploads/mods/$1x$2/$3.jpg
+RewriteRule ^mods/([a-zA-Z0-9_-]+)?.jpg$ uploads/mods/$1.jpg

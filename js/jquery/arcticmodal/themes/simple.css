@@ -1,0 +1,30 @@
+.box-modal {
+	position: relative;
+	/*width: 500px;*/
+	padding: 16px;
+	background: #fff;
+	color: #3c3c3c;
+	font: 14px/18px Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+	box-shadow: 0 0 0 12px rgba(153, 153, 153, .3);
+	border-radius: 12px;
+}
+.box-modal_close {
+	background-color: #959595;
+	border-radius: 30px;
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 0;
+	height: 0;
+	padding: 13px;
+	position: absolute;
+	right: 6px;
+	top: 6px;
+	width: 0;
+}
+.box-modal_close.arcticmodal-close::before {
+	content: "\e014";
+	font: 400 16px/0 "Glyphicons Halflings";
+	margin: 0 -8px;
+	position: absolute;
+}
+.box-modal_close:hover { background-color: #f07c23; }

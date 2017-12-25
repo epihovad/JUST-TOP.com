@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+/*@media screen and (max-width : 767px){
+  .sz-767{ display:block;}
+  .Around { width:768px;}
+  .Lcol { width:150px;}
+  .Lcol .lfix { width:150px;}
+
+  #logo .name { font-size:13px;}
+  #logo .born { font-size:13px;}
+
+  .main a { font-size:20px; }
+  .main a:hover, a.cur { color:#f07c23; text-decoration:none; }
+}
+
+@media screen and (min-width : 768px) and (max-width: 1024px) {
+  .sz-768-1024 { display:block;}
+  .Lcol { width:150px;}
+  .Lcol .lfix { width:150px;}
+
+  #logo .name { font-size:13px;}
+  #logo .born { font-size:13px;}
+
+  .main a { font-size:20px; }
+  .main a:hover, a.cur { color:#f07c23; text-decoration:none; }
+}*/
+
+@media screen and (max-width: 1280px) {
+  .Around { min-width:1024px;}
+  .Lcol { width:200px;}
+  .Lcol .lfix { width:200px;}
+
+  #logo img { width:80%;}
+
+  .tmain li { margin: 0 20px 0 0;}
+  .tmain li a { font-size:14px; }
+  .tmain li a::after { height: 18px; margin: 2px 0 0 10px; }
+
+  .content { font-size:14px;}
+}
+
+@media screen /*and (min-width : 1024px)*/ and (max-width: 1440px) {
+
+  .main a { font-size:22px; }
+  .main a:hover, a.cur { color:#f07c23; text-decoration:none; }
+
+  .glist .good .good-in { padding:60px 0 60px; border-bottom:8px solid #eee1d8; }
+  .glist .good .name { font-size:20px;}
+  .glist .good .price .price-actual { font-size:26px; line-height:26px;}
+  .glist .good .price .price-old { font-size:20px;}
+  .glist .good .adv div { font-size:14px; }
+  .glist .good .adv div { padding:5px 0 10px 32px; font-size:16px; }
+  .glist .good .adv div span { font-size:0; padding:23px 25px 0 0; position:absolute; margin:-3px 0 0 -32px; background-position:0 -38px; }
+  .glist .good .good-in:hover .adv div span { background-position:-25px -38px; }
+  .glist .good .corn { border-bottom: 70px solid #f07c23; border-right: 70px solid transparent; margin-top: -10px; }
+  .glist .good .corn div { padding:34px 32px 0 0; background:url(/img/glist-like.png) 0 -50px no-repeat; margin:36px 0 0 7px; }
+  .glist .good .more { font: 18px/18px "impact"; margin-top: 10px; padding: 8px 14px;}
+
+  .alist .good { float:left; width:25%;}
+  .alist .good .name { font-size:16px; }
+  .alist .good .price {font: 20px/20px "impact"; }
+
+  .good-tocart .lb { font-size:18px; }
+  .good-tocart .price .price-actual { font-size:32px; line-height:27px;}
+  .good-tocart .price .price-old { font-size:22px;}
+  .good-tocart .tocart { font-size:24px; line-height:24px; padding:10px 24px; }
+
+  .stats th { font-size:16px; }
+  .stats td { font-size:18px; }
+
+  .step .step-left { float:none; width:100%;}
+  .step .step-right { float:none; width:100%;}
+  .step .step-note { margin-bottom:20px; min-height:0;}
+
+  .step .cart thead th { font-size:12px; }
+
+  .tile .item { width:215px;}
+
+  .Footer { padding-left:200px; min-width:1024px;}
+  .Footer .bmain { width:100%;}
+  .Footer .bmain .h { font-size:16px;}
+  .Footer .bmain ul li a { font-size:14px;}
+  .Footer .sepline { width:100%;}
+  .Footer .bottom { width:100%;}
+}
+
+@media screen and (min-width : 1600px) {
+  .gim .gim-other .im { width:20%;}
+}
+
+@media screen and (min-width : 1950px) {
+  .Around { width:1950px;}
+  .Footer { width:1950px;}
+}
+
+@media screen and (max-width : 1200px) {
+
+  .Middle { float:none; width:100%;}
+  .Rcol { display:none;}
+
+  .umain li { margin-right:20px;}
+  .umain li a { font-size:13px;}
+  .umain li a::after { margin-left:10px; }
+
+  .header-phone { margin-left:55px;}
+
+  .good-preview { display:none;}
+  .gim { width:45%;}
+  .good-tocart { width:45%;}
+  .good-tocart .lb { font-size:22px !important; }
+
+  .step .cart thead th { font-size:12px; padding:2px 3px;}
+  .step .cart tbody td { padding:4px 5px; font-size:14px;}
+  .step .cart tbody td.c8 { font-size:18px;}
+  .step .cart .btn-number { padding: 0 2px 2px; font: 10px/0px "impact"; border-width:1px; border-color:#ab9b8f; background-color:#eee1d8;}
+  .step .cart .btn-number:first-child { padding-left:7px; }
+  .step .cart .btn-number:last-child { padding-right:7px; }
+  .step .cart .btn-number .glyphicon { font-size:12px; line-height:18px;}
+  .step .cart .btn-number:hover { border-color:#f07c23;}
+  .step .cart .input-group input { text-align:center; width:34px; height: 22px; border-width:1px; border-color:#ab9b8f; padding: 2px 0 2px; font-size:14px; }
+
+  .tile .item { width:200px; }
+
+  .Footer .bmain .h { font-size:15px !important;}
+  .Footer .bmain ul li a { font-size:13px !important;}
+  .Footer .bottom .copy { width:70%;}
+  .Footer .bottom .us { width:20%; padding-left:0; }
+  .Footer .bottom .counters { display:none; }
+}
